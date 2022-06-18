@@ -1,0 +1,167 @@
+:root {
+    --dark: #424c5d;
+	--darker: #232e3c;
+	--darkest: #111827;
+	--grey: #768093;
+	--blue: #09C6F9;
+	--darkblue: #045DE9;
+	--light: #EEE;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+    background-color: var(--dark);
+    min-height: 100vh;
+}
+
+header {
+    max-width: 800px;
+    width: 100%;
+    padding: 2rem 1rem;
+    margin: 0 auto;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--grey);
+    margin-bottom: 1rem;
+}
+
+#new-form {
+    display: flex;
+}
+
+#new-input {
+    background-color: var(--darker);
+    flex: 1 1 0%;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: 1.25rem;
+    margin-right: 1rem;
+    color: var(--light);
+    font-weight: 700;
+}
+
+#new-input::placeholder {
+    color: var(--grey);
+}
+
+input, button {
+    appearance: none;
+    outline: none;
+    border: none;
+    background: none;
+}
+
+.new-submit {
+    color: var(--blue);
+    font-size: 1.25rem;
+    font-weight: 700;
+    background-image: linear-gradient(to right, var(--blue), var(--darkblue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.new-submit:hover {
+	opacity: 0.8;
+}
+
+.new-submit:active {
+	opacity: 0.6;
+}
+
+main {
+    flex: 1 1 0%;
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+    padding: 1rem;
+}
+
+main h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--grey);
+    margin-bottom: 1rem;
+}
+
+.tasks {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--darkest);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.content {
+    flex: 1 1 0%;
+}
+
+#text {
+    font-size: 1.2rem;
+    width: 100%;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: var(--light);
+    display: block;
+    transition: 0.4s;
+}
+
+#text:not(:read-only) {
+	color: var(--blue);
+}
+
+button {
+    cursor: pointer;
+    margin: 0 0.5rem;
+	font-size: 1.2rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	transition: 0.4s;
+}
+
+.edit {
+    background-image: linear-gradient(to right, var(--blue), var(--darkblue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.delete {
+    color: crimson;
+}
+
+button:hover {
+	opacity: 0.8;
+}
+
+button:active {
+	opacity: 0.6;
+}
+
+@media only screen and (max-width: 800px) {
+    .new-submit,
+    #new-input,
+    #text,
+    button {
+        font-size: 1rem;
+    }
+
+    main h2 {
+        font-size: 1.3rem;
+    }
+
+    .tasks,
+    #new-input {
+        padding: 0.8rem;
+    }
+}
